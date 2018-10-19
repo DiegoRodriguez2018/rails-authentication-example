@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: medium_production
-  username: medium
   password: <%= ENV['MEDIUM_DATABASE_PASSWORD'] %>

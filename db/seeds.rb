@@ -23,11 +23,10 @@ User.create(email:"user1@gmail.com", password:"123456")
 User.create(email:"user2@gmail.com", password:"123456")
 User.create(email:"user3@gmail.com", password:"123456")
 
-
-Post.create([{title:"Famous Hitchhikers Guide To The Galaxy Quotes",
-    content: Faker::HitchhikersGuideToTheGalaxy.quote ,
-    subtitle: "Best Hitchhikers Guide To The Galaxy Quotes",
-    user_id:  User.find(rand(1..3))
-    }])
-
-
+(1..12).each do 
+    Post.create([{title:"Famous Hitchhikers Guide To The Galaxy Quotes",
+        content: Faker::HitchhikersGuideToTheGalaxy.quote ,
+        subtitle: "Awesome Quotes",
+        user:  User.find(rand(1..3))
+        }])
+end

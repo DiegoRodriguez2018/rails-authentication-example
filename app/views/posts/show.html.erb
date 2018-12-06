@@ -1,10 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
 <p>
   Post created by:  
   <strong> <%= @post.user.email %></strong>
- 
 </p>
 
 <p>
@@ -17,18 +15,10 @@
   <%= @post.content %>
 </p>
 
-
-
-<%= form_for Comment.new, url: '/comments' do |f| %>
-  <%= f.text_area :message %>
-  you can hide this by putting a hidden field 
-  <%= f.text_field :post_id , value: @post.id %>  
-  <%= f.submit "Create" %>
-<% end %>
-
+<hr>
 
 <p>
-  <strong>Comments:</strong>
+  <strong>Previous Comments:</strong>
   <br>
   <% @post.comments.each do |comment| %>
     <%= comment.user.email %> said 
@@ -37,6 +27,12 @@
   <% end %>
 </p>
 
+<%= form_for Comment.new, url: '/comments' do |f| %>
+  <%= f.text_area :message %>
+  <%= f.hidden_field :post_id , value: @post.id %>  
+  <br>
+  <%= f.submit "Comment" %>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

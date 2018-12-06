@@ -22,5 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-git remote set-url origin git@github.com:DiegoRodriguez2018/simple-rails-blog-with-authentication.git

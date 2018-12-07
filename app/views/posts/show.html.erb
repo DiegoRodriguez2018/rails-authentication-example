@@ -11,27 +11,27 @@
   <strong> <%= @post.user.email %></strong>
 </p>
 
-<p>
+<h2 class="display-4">
   <%# <strong>Title:</strong> %>
-  <%= @post.title %>
-</p>
+  <%= @post.title %></h2>
 
-<p>
-  <strong>Content:</strong>
+<h4 class="jumbotron text-monospace">
   <%= @post.content %>
-</p>
+</h4>
 
 <hr>
 
-<p>
+<h5>
   <strong>Previous Comments:</strong>
-  <br>
+  
+  <div class="alert alert-info">
   <% @post.comments.each do |comment| %>
     <%= comment.user.email %> said 
     <strong> <%= comment.message %> </strong>
     <br>
   <% end %>
-</p>
+  </div>
+</h5>
 
 <%= form_for Comment.new, url: '/comments' do |f| %>
   <%= f.text_area :message %>

@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * Screenshots:
 
-![](2018-12-06-21-20-05.png)
+![](2018-12-09-20-57-40.png)
